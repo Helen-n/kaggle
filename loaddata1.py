@@ -128,7 +128,7 @@ def reduceAndCluster(input_df, submit_df, clusters=3):
 def getDataSets():
 
     global  df
-    df = pd.read_csv('data/data.csv', header=0)
+    df = pd.read_csv('data.csv', header=0)
 
     # process the individual variables present in the raw data
     processActionType()
@@ -144,5 +144,5 @@ def getDataSets():
 
     df_train = df[df['shot_made_flag'].notnull()]
     df_test  = df[df['shot_made_flag'].isnull()]
-    df_submission = pd.read_csv('data/sample_submission.csv', header=0)
+    df_submission = pd.read_csv('sample_submission.csv', header=0)
     return df_train, df_test, df_submission
